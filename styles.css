@@ -6,9 +6,14 @@
     font-style: normal;
 }
 
+input:focus {
+    outline: none;
+    border: none;
+}
+
 .mainMenu {
     background-image: url("mainMenuBackground.jpg");
-    background-position: 78% 100%;
+    background-position: 78vw 100vw;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: auto 90%;
@@ -36,7 +41,7 @@
 
 .topBan {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 20%;
     padding-top: 15%;
     padding-bottom: 4%;
@@ -180,6 +185,48 @@
     text-align: center;
     font-size: 0.9em;
     margin: 0 0.1em;
+    border-width: 0;
+    
+
+}
+
+.dateInp{
+    padding: 0 4%;
+    height: 1.5em;
+    border-radius: 1em;
+    background-color: #D9D9D9;
+    color: #00000073;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 0 0.1em;
+    border-width: 0;
+    width: 2.5em;
+}
+
+.timeInp{
+    padding: 0 4%;
+    height: 1.5em;
+    border-radius: 1em;
+    background-color: #D9D9D9;
+    color: #00000073;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 0 0.1em;
+    border-width: 0;
+    width: 1.5em;
+}
+
+.locInp{
+    padding: 0 4%;
+    height: 1.5em;
+    border-radius: 1em;
+    background-color: #D9D9D9;
+    color: #00000073;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 0 0.1em;
+    border-width: 0;
+    width: 3.5em;
 }
 
 .dottext2{
