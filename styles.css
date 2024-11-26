@@ -287,19 +287,19 @@ input:focus {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 0.5em
+    border-radius: 0.em
   }
   
   .dropbtn:hover, .dropbtn:focus {
     background-color: #c2c2c2;
   }
   
-  #myInput {
+  .myInp {
     box-sizing: border-box;
     background-repeat: no-repeat;
     font-size: 16px;
     width:100%;
-    padding: 3% 4% 1% 4%;
+    padding: 1% 4% 1% 4%;
     border: none;
     border-bottom: 1px solid #ddd;
   }
@@ -321,8 +321,7 @@ input:focus {
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
-    border-bottom-left-radius: 0.8em;
-    border-bottom-right-radius: 0.8em;
+    border-radius: 0.5em;
   }
   
   .dropdown-content a {

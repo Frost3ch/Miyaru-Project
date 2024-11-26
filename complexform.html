@@ -6,13 +6,51 @@
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
         function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
+          document.getElementById("speciesdrop").classList.toggle("show");
         }
         
         function filterFunction() {
           const input = document.getElementById("myInput");
           const filter = input.value.toUpperCase();
-          const div = document.getElementById("myDropdown");
+          const div = document.getElementById("speciesdrop");
+          const a = div.getElementsByTagName("a");
+          for (let i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+
+        function myFunction1() {
+          document.getElementById("sizedrop").classList.toggle("show");
+        }
+        
+        function filterFunction1() {
+          const input = document.getElementById("myInput1");
+          const filter = input.value.toUpperCase();
+          const div = document.getElementById("sizedrop");
+          const a = div.getElementsByTagName("a");
+          for (let i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+
+        function myFunction2() {
+          document.getElementById("bdrop").classList.toggle("show");
+        }
+        
+        function filterFunction2() {
+          const input = document.getElementById("myInput2");
+          const filter = input.value.toUpperCase();
+          const div = document.getElementById("bdrop");
           const a = div.getElementsByTagName("a");
           for (let i = 0; i < a.length; i++) {
             txtValue = a[i].textContent || a[i].innerText;
@@ -71,11 +109,31 @@
         <div class="banF">Shark Information</div>
         <div class="dropdown" style="margin-top:1.5vh">
             <button onclick="myFunction()" class="dropbtn">Species</button>
-            <div id="myDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <div id="speciesdrop" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" class="myInp">
               <a href="#tiger">Tiger Shark</a>
               <a href="#nurse">Nurse Shark</a>
               <a href="#whale">Whale Shark</a>
+            </div>
+        </div>
+        <div class="dropdown" style="margin-top:1vh">
+            <button onclick="myFunction1()" class="dropbtn">Size</button>
+            <div id="sizedrop" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput1" onkeyup="filterFunction1()" class="myInp">
+              <a href="#0.5">0-0.5m</a>
+              <a href="#1">0.5-1m</a>
+              <a href="#1.5">1-1.5m</a>
+              <a href="#2">1.5-2m</a>
+            </div>
+        </div>
+        <div class="dropdown" style="margin-top:1vh">
+            <button onclick="myFunction2()" class="dropbtn">Behaviour</button>
+            <div id="bdrop" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()" class="myInp">
+              <a href="#circling">Circling</a>
+              <a href="#hunting">Hunting</a>
+              <a href="#feeding">Feeding</a>
+              <a href="#migrating">Migrating</a>
             </div>
         </div>
     </div>
