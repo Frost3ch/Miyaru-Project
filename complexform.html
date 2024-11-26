@@ -2,7 +2,28 @@
 <html lang="en">
 <meta meta name="viewport" content= "width=device-width, user-scalable=no" />
 <head>
-    
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function filterFunction() {
+          const input = document.getElementById("myInput");
+          const filter = input.value.toUpperCase();
+          const div = document.getElementById("myDropdown");
+          const a = div.getElementsByTagName("a");
+          for (let i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -48,9 +69,16 @@
     </div>
     <div class="off">
         <div class="banF">Shark Information</div>
-        
+        <div class="dropdown" style="margin-top:1.5vh">
+            <button onclick="myFunction()" class="dropbtn">Species</button>
+            <div id="myDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+              <a href="#tiger">Tiger Shark</a>
+              <a href="#nurse">Nurse Shark</a>
+              <a href="#whale">Whale Shark</a>
+            </div>
+        </div>
     </div>
-
 </body>
 
 <footer>
@@ -60,3 +88,4 @@
     </div>
 </footer>
 </html>
+

@@ -136,7 +136,7 @@ input:focus {
     margin-right: auto;
 
     margin-top: 4%;
-    width: 90%;
+    width: 90vw;
     height: 2%;
     padding: 1% 10%;
     background-color: #090064;
@@ -251,7 +251,7 @@ input:focus {
     border-radius: 30%;
     background-color: #00C2FF;
     position: absolute;
-    right: 4.4em;
+    right: 15vw;
     border: none;
     text-align: center;
     margin-top: -0.5em;
@@ -267,3 +267,71 @@ input:focus {
 .off{
     margin-top: 2em;
 }
+
+.custom-select {
+    position: relative;
+    text-align: center;
+    font-family: Arial;
+}
+
+.custom-select select{
+    text-align: center;
+}
+
+.dropbtn {
+    text-align: left;
+    width: 90vw;
+    background-color: #D9D9D9;
+    color: black;
+    padding: 1% 4%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5em
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #c2c2c2;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    width:100%;
+    padding: 3% 4% 1% 4%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    left: 5vw;
+    position: relative;
+    margin:auto;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width:100%;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 1% 4%;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
