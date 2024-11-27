@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+body{
+    margin-top: 20vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 input:focus {
     outline: none;
     border: none;
@@ -23,26 +30,27 @@ input:focus {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 50vw;
 }
 
 .miyaruL {
-    max-width: 60%;
-    height: auto;
+    top: 10vh;
+    width: 25vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position:sticky;
 }
 
 .sticky-div {
-    position: sticky;
     top: 0px;
+    position:sticky;
 }
 
 .topBan {
     box-sizing: border-box;
     width: 100vw;
-    height: 20%;
+    height: 20vh;
     padding-top: 15%;
     padding-bottom: 4%;
     background-color: #00C2FF;
@@ -110,8 +118,8 @@ input:focus {
     box-sizing: border-box;
     width: 100%;
     height: 5%;
-    position: absolute;
-    bottom: 0; 
+    position: fixed;
+    bottom: 0px; 
     background-color: #010932;
     box-shadow: 0em 0.1em 2.1em 4em #010932;
 }
@@ -124,7 +132,7 @@ input:focus {
     margin-right: auto;
     border-radius: 100%;
     border: 0.2em solid white;
-    position: absolute;
+    position: fixed;
     bottom: 3%;
     right: 4%;
 }
@@ -148,9 +156,9 @@ input:focus {
 }
 
 .lil{
-    margin-top: 2%;
-    position: absolute;
-    left: 7%;
+    margin-top: 2vh;
+    position: relative;
+    left: 7vw;
 }
 
 .dot{
@@ -161,13 +169,13 @@ input:focus {
     border-radius: 50%;
     background-color: #D9D9D9;
     display: inline-block;
-    margin-right: 4%;
+    margin-right: 2vw;
 }
 
 .offset{
     position:relative;
-    left: 7%;
-    margin-top: 8%;
+    left: 7vw;
+    margin-top: 0vh;
 }
 
 .container{
@@ -186,8 +194,6 @@ input:focus {
     font-size: 0.9em;
     margin: 0 0.1em;
     border-width: 0;
-    
-
 }
 
 .dateInp{
@@ -265,7 +271,7 @@ input:focus {
 }
 
 .off{
-    margin-top: 2em;
+    margin-top: 1.5vh;
 }
 
 .custom-select {
@@ -344,17 +350,16 @@ input:focus {
   .custom-file-input::before {
     margin-left: 15vw;
     text-align: center;
-    width: 70vw;
+    width: 70vw ;
     height: 5vh;
     content: 'Add Images here...';
     color: black;
-    display: inline-block;
+    display: block;
     background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
     border: 1px solid #999;
-    border-radius: 3px;
+    border-radius: 1em;
     padding: 5px 8px;
     outline: none;
-    white-space: nowrap;
     -webkit-user-select: none;
     cursor: pointer;
     text-shadow: 1px 1px #fff;

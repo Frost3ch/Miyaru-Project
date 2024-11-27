@@ -70,7 +70,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miyaru Website</title>
 
-    <div class="sticky-div">
+    <div style="position: fixed; top: 0; z-index: 100;">
         <div class = "topBan">
             <img src="miyaru.png" alt="Miyaru" class="miyaruL">
         </div>
@@ -142,16 +142,16 @@
     <p class="lil">Colour</p>
     <div class="offset">
         <div class="container">
-            <span class="dot"></span>
-            <input class="dateInp" placeholder ="Enter colour here..." style="width:68vw; text-align: left;">
+            <span class="dot" style="margin-top: 0.5vh;"></span>
+            <input class="dateInp" placeholder ="Enter colour here..." style="width:68vw; text-align: left; margin-top: 0.5vh;">
         </div>
     </div>
-    <div style="margin-top: -4vh;">
+    <div>
       <p class="lil">Notable Scars/Stripes</p>
       <div class="offset">
           <div class="container">
-              <span class="dot" style="margin-top: 4vh;"></span>
-              <input class="dateInp" placeholder ="Write here..." style="width:68vw; text-align: left; margin-top: 4vh;">
+              <span class="dot" style="margin-top: 0.5vh;"></span>
+              <input class="dateInp" placeholder ="Write here..." style="width:68vw; text-align: left; margin-top: 0.5vh;">
           </div>
       </div>
     </div>
@@ -159,9 +159,12 @@
     <div>
       <input type="file" id="myFile" name="photo" class="custom-file-input" style="margin-top: 2vh;">
     </div>
+
+    <div class="banF">Extras</div>
+    <div style="height:30vh;"></div>
 </body>
 
-<footer>
+<footer style="z-index: 100;">
     <div class = "box"></div>
     <div>
         <img src="mIcon.png" class = "micon">
