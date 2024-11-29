@@ -26,20 +26,12 @@ input:focus {
     background-size: auto 200vw;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50vw;
-}
-
 .miyaruL {
     position: relative;
     top: 10vh;
     max-width: 60vw;
     width: auto;
     display: block;
-
     margin:auto;
 }
 
@@ -100,7 +92,7 @@ input:focus {
 
 .box{
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     height: 5%;
     position: fixed;
     bottom: 0px; 
@@ -109,7 +101,7 @@ input:focus {
 }
 
 .micon{
-    max-width: 28%;
+    max-width: 30vw;
     height: auto;
     display: block;
     margin-left: auto;
