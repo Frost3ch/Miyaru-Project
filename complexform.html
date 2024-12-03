@@ -102,7 +102,7 @@
 </head>
 
 <body>
-  <form action="#" method="post">
+  <form action="index.html" method="post" onkeydown="if(event.keyCode === 13) {alert('You have pressed Enter key, use submit button instead');return false;}">
     <div>
         <div class="banF">Location/Time</div>
         <p class="lil">Date</p>
@@ -168,7 +168,7 @@
     <div class="offset">
         <div class="container">
             <span class="dot" style="margin-top: 0.5vh;"></span>
-            <input class="dateInp" placeholder ="Enter colour here..." style="width:68vw; text-align: left; margin-top: 0.5vh;">
+            <input class="dateInp" placeholder ="Enter colour here..." style="width:68vw; text-align: left; margin-top: 0.5vh;" id="colour">
         </div>
     </div>
     <div>
@@ -176,7 +176,7 @@
       <div class="offset">
           <div class="container">
               <span class="dot" style="margin-top: 0.5vh;"></span>
-              <input class="dateInp" placeholder ="Write here..." style="width:68vw; text-align: left; margin-top: 0.5vh;">
+              <input class="dateInp" placeholder ="Write here..." style="width:68vw; text-align: left; margin-top: 0.5vh;" id="scars">
           </div>
       </div>
     </div>
@@ -186,9 +186,9 @@
     </div>
 
     <div class="banF">Extras</div>
-    <textarea placeholder="Please write any extra information here..." class="extrainfo" style="margin-top: 2vh;"></textarea>
-    <div style="height:30vh;"></div>
-    <input type="submit" value="Send"/>
+    <textarea placeholder="Please write any extra information here..." class="extrainfo" style="margin-top: 2vh;" id="extras"></textarea>
+    <input type="submit" value="Submit Sighting" class="submitBut"/>
+    <div style="height:22vh;"></div>
   </form>
 </body>
 

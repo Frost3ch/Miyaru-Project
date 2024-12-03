@@ -346,7 +346,8 @@ input:focus {
   .extrainfo{
     text-align: center;
     border: none;
-    background-color: #D9D9D9;
+    background-color: #B7B7B7;
+    color: #1d1d1d;
     position: relative;
     display: block;
     margin: auto;
@@ -359,4 +360,18 @@ input:focus {
   .extrainfo:focus{
     border: none;
     outline: none;
+  }
+
+  .submitBut{
+    display: block;
+    margin: auto;
+    margin-top: 3vh;
+    outline: none;
+    border:none;
+    width: 60vw;
+    height:4vh;
+    background-color: #00C2FF;
+    border-radius: 2em;
+    font-size: 1em;
+    box-shadow: 0em 0.5em 0.25em -0.3em rgba(0, 0, 0, 0.5);
   }
