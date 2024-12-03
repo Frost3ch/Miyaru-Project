@@ -61,6 +61,31 @@
             }
           }
         }
+
+        function dateFill() {
+          var date = new Date();
+          document.getElementById("date1").value = date.getDay().toString().padStart(2,'0');
+          document.getElementById("date2").value = date.getMonth().toString().padStart(2,'0');
+          document.getElementById("date3").value = date.getFullYear().toString();
+        }
+
+        function timeFill() {
+          var time = new Date();
+          document.getElementById("time1").value = time.getHours().toString().padStart(2,'0');
+          document.getElementById("time2").value = time.getMinutes().toString().padStart(2,'0');
+        }
+        function success(position){
+          document.getElementById("loc1").value = position.coords.latitude.toString();
+          document.getElementById("loc2").value = position.coords.longitude.toString();
+        }
+
+        function error(err){
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        function locFill() {
+          navigator.geolocation.getCurrentPosition(success, error);
+        }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,37 +102,38 @@
 </head>
 
 <body>
+  <form action="#" method="post">
     <div>
         <div class="banF">Location/Time</div>
         <p class="lil">Date</p>
         <div class="offset">
             <div class="container">
                 <span class="dot"></span>
-                <input class="dateInp" placeholder ="dd"><p>/</p><input class="dateInp" placeholder ="mm"><p>/</p><input class="dateInp" placeholder ="yyyy">
-                <button class="imgBut"><img src="calendar.png" class="icon"></button>
+                <input class="dateInp" placeholder ="dd" id="date1"><p>/</p><input class="dateInp" placeholder ="mm" id="date2"><p>/</p><input class="dateInp" placeholder ="yyyy" id="date3">
+                <button type="button" class="imgBut" id="dateB" onclick="dateFill()"><img src="calendar.png" class="icon"></button>
             </div>
         </div>
         <p class="lil">Time</p>
         <div class="offset">
             <div class="container">
                 <span class="dot"></span>
-                <input class="timeInp" placeholder ="00"><p>:</p><input class="timeInp" placeholder ="00">
-                <button class="imgBut"><img src="wall-clock.png" class="icon"></button>
+                <input class="timeInp" placeholder ="00" id="time1"><p>:</p><input class="timeInp" placeholder ="00" id="time2">
+                <button class="imgBut" type="button" onclick="timeFill()"><img src="wall-clock.png" class="icon"></button>
             </div>
         </div>
         <p class="lil">Location</p>
         <div class="offset">
             <div class="container">
                 <span class="dot"></span>
-                <input class="locInp" placeholder ="00.0000"><p class="dottext2">N</p><input class="locInp" placeholder ="00.0000"><p class="dottext2">W</p>
-                <button class="imgBut"><img src="location.png" class="icon"></button>
+                <input class="locInp" placeholder ="00.0000" id="loc1"><p class="dottext2">N</p><input class="locInp" placeholder ="00.0000" id="loc2"><p class="dottext2">W</p>
+                <button type="button" class="imgBut" onclick="locFill()"><img src="location.png" class="icon"></button>
             </div>
         </div>
     </div>
     <div class="off">
         <div class="banF">Shark Information</div>
         <div class="dropdown" style="margin-top:1.5vh">
-            <button onclick="myFunction()" class="dropbtn">Species</button>
+            <button type="button" onclick="myFunction()" class="dropbtn">Species</button>
             <div id="speciesdrop" class="dropdown-content">
               <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" class="myInp">
               <a href="#tiger">Tiger Shark</a>
@@ -116,7 +142,7 @@
             </div>
         </div>
         <div class="dropdown" style="margin-top:1vh">
-            <button onclick="myFunction1()" class="dropbtn">Size</button>
+            <button type="button" onclick="myFunction1()" class="dropbtn">Size</button>
             <div id="sizedrop" class="dropdown-content">
               <input type="text" placeholder="Search.." id="myInput1" onkeyup="filterFunction1()" class="myInp">
               <a href="#0.5">0-0.5m</a>
@@ -126,7 +152,7 @@
             </div>
         </div>
         <div class="dropdown" style="margin-top:1vh">
-            <button onclick="myFunction2()" class="dropbtn">Behaviour</button>
+            <button type="button" onclick="myFunction2()" class="dropbtn">Behaviour</button>
             <div id="bdrop" class="dropdown-content">
               <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()" class="myInp">
               <a href="#circling">Circling</a>
@@ -162,6 +188,8 @@
     <div class="banF">Extras</div>
     <textarea placeholder="Please write any extra information here..." class="extrainfo" style="margin-top: 2vh;"></textarea>
     <div style="height:30vh;"></div>
+    <input type="submit" value="Send"/>
+  </form>
 </body>
 
 <footer style="z-index: 100;">

@@ -330,27 +330,17 @@ input:focus {
     width: 70vw ;
     height: 5vh;
     content: 'Add Images here...';
-    color: black;
+    color: rgba(0, 0, 0, 0.438);
     display: block;
-    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
+    background: #D9D9D9;
+    border: none;
     border-radius: 1em;
     padding: 5px 8px;
     outline: none;
     -webkit-user-select: none;
     cursor: pointer;
-    text-shadow: 1px 1px #fff;
     font-weight: 700;
     font-size: 1.1em;
-  }
-  .custom-file-input:hover::before {
-    border-color: black;
-  }
-  .custom-file-input:active {
-    outline: 0;
-  }
-  .custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
   }
 
   .extrainfo{
@@ -360,9 +350,10 @@ input:focus {
     position: relative;
     display: block;
     margin: auto;
-    height: 10vh;
-    width:85vw;
-    border-radius: 1em;
+    padding: 5vw;
+    height: 8vh;
+    width: 75vw;
+    border-radius: 2.5em;
     resize: none;
   }
   .extrainfo:focus{
