@@ -75,8 +75,8 @@
           document.getElementById("time2").value = time.getMinutes().toString().padStart(2,'0');
         }
         function success(position){
-          document.getElementById("loc1").value = position.coords.latitude.toString();
-          document.getElementById("loc2").value = position.coords.longitude.toString();
+          document.getElementById("loc1").value = position.coords.latitude.toFixed(3);
+          document.getElementById("loc2").value = position.coords.longitude.toFixed(3);
         }
 
         function error(err){
@@ -86,6 +86,27 @@
         function locFill() {
           navigator.geolocation.getCurrentPosition(success, error);
         }
+
+        let form = document.getElementById('form');
+        form.onsubmit = function(event){
+          let xhr = new XMLHttpRequest();
+          let formData = new FormData(form);
+          //open the request
+          xhr.open('POST','http://localhost:7000/tests/v1.0/form')
+          xhr.setRequestHeader("Content-Type", "application/json");
+
+          //send the form data
+          xhr.send(JSON.stringify(Object.fromEntries(formData)));
+
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState == XMLHttpRequest.DONE) {
+                  form.reset(); //reset form after AJAX success or do something else
+              }
+          }
+          //Fail the onsubmit to avoid page refresh.
+          return false; 
+    }
+      
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,7 +123,7 @@
 </head>
 
 <body>
-  <form action="index.html" method="post" onkeydown="if(event.keyCode === 13) {alert('You have pressed Enter key, use submit button instead');return false;}">
+  <form id = "form" action="index.html" method="post" onkeydown="if(event.keyCode === 13) {alert('You have pressed Enter key, use submit button instead');return false;}">
     <div>
         <div class="banF">Location/Time</div>
         <p class="lil">Date</p>
@@ -187,7 +208,7 @@
 
     <div class="banF">Extras</div>
     <textarea placeholder="Please write any extra information here..." class="extrainfo" style="margin-top: 2vh;" id="extras"></textarea>
-    <input type="submit" value="Submit Sighting" class="submitBut"/>
+    <input type="submit" typr="button" value="Submit Sighting" class="submitBut"/>
     <div style="height:22vh;"></div>
   </form>
 </body>
