@@ -76,7 +76,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
   // Define API links
   const apiLink = {
-    'mongodb': 'https://sharkproject.tactor.dev/api/addShark',
+    'mongodb': 'https://api.tactor.dev/',
     'xano': 'https://x8ki-letl-twmt.n7.xano.io/api:2D0WNQvF/shark_data',
   };
 
@@ -94,5 +94,12 @@ fetch(apiLink['mongodb'], {
     size: sizeV,
     behaviour: behaviourV,
   }),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.error('Error:', error);
 });
 });
