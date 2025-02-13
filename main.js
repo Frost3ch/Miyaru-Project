@@ -76,7 +76,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
   // Define API links
   const apiLink = {
-    'mongodb': 'https://api.tactor.dev/',
+    'mongodb': 'https://api.tactor.dev/miyaru/addShark',
     'xano': 'https://x8ki-letl-twmt.n7.xano.io/api:2D0WNQvF/shark_data',
   };
 
